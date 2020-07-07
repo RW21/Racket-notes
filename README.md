@@ -93,3 +93,52 @@ Note there are immutable and mutable hash tables.
 (define greet
 	(lambda (given [surname "Smith"])
 		(string-append "Hello, " given " " surname)))
+```
+
+### Define
+
+```racket
+(define make-add-suffix
+	(lambda (s2)
+		lambda(s) (string-append s s2)))
+
+; > ((make-add-suffix "!") "hello)
+; "hello!"
+
+(define ( make-add-suffix s )
+	(lambda (s) (string-append s s2)))
+```
+
+- `values` to return multiple values.
+  - `define-values` to bind them to multiple identifiers.
+  
+### Local Binding
+
+```racket
+(let ([a 1]
+	[b 2]
+	[c 3])
+	(list a b c))
+
+;'(1 2 3)
+
+```
+
+### Sequencing
+
+```racket
+(define (print-triangle height)
+	(if (zero? height)
+		(void)
+		(begin
+			(display (make-string height #\*))
+			(newline)
+			(print-traingle (sub1 height)))))
+```
+
+- `begin0`
+- `when` and `unless`
+
+## Structure Types
+
+```racket
