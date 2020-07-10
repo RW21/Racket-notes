@@ -93,6 +93,9 @@ Note there are immutable and mutable hash tables.
 (define greet
 	(lambda (given [surname "Smith"])
 		(string-append "Hello, " given " " surname)))
+		
+(define (firsts_ lst)
+  (map (lambda (a) (car a)) lst))
 ```
 
 ### Define
